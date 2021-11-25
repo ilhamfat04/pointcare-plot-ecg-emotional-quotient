@@ -1,0 +1,218 @@
+  {%include 'header.html'%}
+  {%include 'sidebar.html'%}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Peak Detection</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Peak Detection</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container card">
+          <!-- Left col -->        
+          <section class="connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="mb-2">
+              <div class="card shadow container-fluid col-lg ">
+                <form method="POST" action="{{url_for('import_data_pre')}}" enctype="multipart/form-data">
+                  <div class="mb-3">
+                    <h4 class="text-center">File Pre</h4>
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Import Datasets</label>
+                      <input type="file" class="form-control-file" id="dataset" name="file">                      
+                    </div>
+                    <div>
+                      <button class="btn btn-primary" type="submit">Use</button>
+                    </div>
+                  </div>
+                </form> 
+              </div>
+                           
+            </div>    
+            <div class="row container-fluid justify-content-center">              
+            <div class="card col-lg-5">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  Raw Data
+                </h3>
+                <div class="card-tools">
+                  <div class="card-tools">
+                    <a href="{{url_for('plot_peak_no_point_pre')}}" class="btn btn-primary btn-sm">Tampilkan</a>
+                  </div>
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <img src="{{ url_for('static', filename='images/plotnopointpre.png')}}" alt="Gambar" height="300px", width="370px">
+                </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <div class="card col-lg-5 ml-2">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  Result Peak Detection
+                </h3>
+                <div class="card-tools">
+                  <a href="{{url_for('plot_peak_pre')}}" class="btn btn-primary btn-sm">Tampilkan</a>
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <img src="{{ url_for('static', filename='images/plotpre.png')}}" alt="Gambar" height="300px", width="370px">
+                </div>
+              </div>
+            </div>
+            </div>
+          </section>        
+        </div>
+
+<!-- ------------------------------------------------------------------------- -->
+        <div class="container card">
+          <!-- Left col -->        
+          <section class="connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="mb-2">
+              <div class="card shadow container-fluid col-lg ">
+                <form method="POST" action="{{url_for('import_data_on')}}" enctype="multipart/form-data">
+                  <div class="mb-3">
+                    <h4 class="text-center">File On</h4>
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Import Datasets</label>
+                      <input type="file" class="form-control-file" id="dataset" name="file">                      
+                    </div>
+                    <div>
+                      <button class="btn btn-primary" type="submit">Use</button>
+                    </div>
+                  </div>
+                </form> 
+              </div>
+                           
+            </div>    
+            <div class="row container-fluid justify-content-center">              
+            <div class="card col-lg-5">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  Raw Data
+                </h3>
+                <div class="card-tools">
+                  <div class="card-tools">
+                    <a href="{{url_for('plot_peak_no_point_on')}}" class="btn btn-primary btn-sm">Tampilkan</a>
+                  </div>
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <img src="{{ url_for('static', filename='images/plotnopointon.png')}}" alt="Gambar" height="300px", width="370px">
+                </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <div class="card col-lg-5 ml-2">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  Result Peak Detection
+                </h3>
+                <div class="card-tools">
+                  <a href="{{url_for('plot_peak_on')}}" class="btn btn-primary btn-sm">Tampilkan</a>
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <img src="{{ url_for('static', filename='images/ploton.png')}}" alt="Gambar" height="300px", width="370px">
+                </div>
+              </div>
+            </div>
+            </div>
+          </section>        
+        </div>
+<!-- ------------------------------------------------------------------ -->
+        <div class="container card">
+          <!-- Left col -->        
+          <section class="connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="mb-2">
+              <div class="card shadow container-fluid col-lg ">
+                <form method="POST" action="{{url_for('import_data_post')}}" enctype="multipart/form-data">
+                  <div class="mb-3">
+                    <h4 class="text-center">File Post</h4>
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Import Datasets</label>
+                      <input type="file" class="form-control-file" id="dataset" name="file">                      
+                    </div>
+                    <div>
+                      <button class="btn btn-primary" type="submit">Use</button>
+                    </div>
+                  </div>
+                </form> 
+              </div>
+                           
+            </div>    
+            <div class="row container-fluid justify-content-center">              
+            <div class="card col-lg-5">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  Raw Data
+                </h3>
+                <div class="card-tools">
+                  <div class="card-tools">
+                    <a href="{{url_for('plot_peak_no_point_post')}}" class="btn btn-primary btn-sm">Tampilkan</a>
+                  </div>
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <img src="{{ url_for('static', filename='images/plotnopointpost.png')}}" alt="Gambar" height="300px", width="370px">
+                </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+            <div class="card col-lg-5 ml-2">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  Result Peak Detection
+                </h3>
+                <div class="card-tools">
+                  <a href="{{url_for('plot_peak_post')}}" class="btn btn-primary btn-sm">Tampilkan</a>
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content p-0">
+                  <img src="{{ url_for('static', filename='images/plotpost.png')}}" alt="Gambar" height="300px", width="370px">
+                </div>
+              </div>
+            </div>
+            </div>
+          </section>        
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+    
+    
+  </div>
+    {%include 'footer.html'%}

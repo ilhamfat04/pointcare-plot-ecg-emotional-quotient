@@ -1,0 +1,125 @@
+  {%include 'header.html'%}
+  {%include 'sidebar.html'%}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Ekstraksi Fitur</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Ekstraksi Fitur</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+      {% with messages = get_flashed_messages()  %}
+        {% if messages %}
+          {% for msg in messages %}
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+              {{msg}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endfor %}
+        {% endif %}                  
+      {% endwith %}
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <!-- Main row -->
+        <div class="row justify-content-center">
+          <!-- Left col -->
+          <section class="col-lg-4 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="mb-2">
+            </div>            
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  RRI Result Pre
+                </h3>
+                <div class="card-tools">
+                    <a href="{{url_for('rr_extraction_pre')}}" class="btn btn-primary btn-sm">Extract</a>
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                  <img src="{{ url_for('static', filename='images/rrresultpre.png')}}" alt="Gambar" height="200px" width="300px">
+                </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            
+          </section> 
+
+          <section class="col-lg-4 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="mb-2">
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  RRI Result On
+                </h3>
+                <div class="card-tools">
+                    <a href="{{url_for('rr_extraction_on')}}" class="btn btn-primary btn-sm">Extract</a>
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                  <img src="{{ url_for('static', filename='images/rrresulton.png')}}" alt="Gambar" height="200px" width="300px">
+                </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            
+          </section>  
+
+          <section class="col-lg-4 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="mb-2">
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  RRI Result Post
+                </h3>
+                <div class="card-tools">
+                    <a href="{{url_for('rr_extraction_post')}}" class="btn btn-primary btn-sm">Extract</a>
+                </div>
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                <div class="tab-content">
+                  <img src="{{ url_for('static', filename='images/rrresultpost.png')}}" alt="Gambar" height="200px" width="300px">
+                </div>
+              </div><!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            
+          </section>           
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+    {%include 'footer.html'%}
+ 
